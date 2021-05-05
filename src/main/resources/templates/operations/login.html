@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+ xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Sign in</title>
+ <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+ <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.min.css">
+ <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://www.bootstrapdash.com/demo/login-template-free-1/assets/css/login.css">
+  <link rel="stylesheet" href="https://www.bootstrapdash.com/demo/login-template-free-1/assets/css/login.scss">
+</head>
+
+<body>
+  <main>
+    <div class="container-fluid">
+    <div class="alert alert-danger" role="alert" th:if="${param.error}">
+   The email or password is incorrect!
+  </div>
+      <div class="row">
+        <div class="col-sm-6 login-section-wrapper">
+          <div class="brand-wrapper">
+            <img src="http://ogya.co.id/images/Logo_OGYA-39.png" alt="logo" class="logo">
+          </div>
+          <div class="login-wrapper my-auto">
+          <form th:action="@{/login}" method="post">
+            <h1 class="login-title">Log in</h1>
+              <div class="form-group">
+                <label for="inputEmail" class="sr-only">Email</label>
+       <input type="email" id="email" name="email" class="form-control" placeholder="Email" required autofocus>
+              </div>
+              <div class="form-group mb-4">
+                 <label for="inputPassword" class="sr-only">Password</label>
+       <input type="password" id="password" name="password" class="form-control" placeholder="Password" required>
+              </div>
+              <input name="submit" id="submit" class="btn btn-block login-btn" type="submit" value="submit">          
+            <label>
+           <input type="checkbox" name="remember-me" /> Remember me
+         </label>
+            <p class="login-wrapper-footer-text">Don't have an account? <a th:href="@{/signup}" class="text-reset">Register here</a></p>
+          </div>
+        </div>
+        <div class="col-sm-6 px-0 d-none d-sm-block">
+          <img src="https://www.bootstrapdash.com/demo/login-template-free-1/assets/images/login.jpg" alt="login image" class="login-img">
+        </div>
+       </form>
+      </div>
+    </div>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>
